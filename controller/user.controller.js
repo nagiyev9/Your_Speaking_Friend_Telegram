@@ -21,6 +21,27 @@ export const createUserAccount = async ctx => {
     };
 };
 
+// Update User Data
+export const updateUserData = async ctx => {
+    try {
+        const user = ctx.from.id.toString();
+
+        if (!user) {
+            return ctx.replyWithHTML('<p>There is no valid account</p>');
+        };
+
+        const checkAccount = await userService.getUserByUserID(user);
+
+        if (!checkAccount) {
+            return ctx.replyWithHTML("<b>There is no account!</b>");
+        };
+
+        await userService.updateUserData(user, ctx.from.username || "unknown", ctx.from.first_name || "unknown", ctx.from.last_name || "unknown");
+    } catch (error) {
+        console.log(error);  
+    };
+};
+
 // Get User Data
 export const getUserData = async ctx => {
     try {

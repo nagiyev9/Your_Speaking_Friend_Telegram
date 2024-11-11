@@ -7,14 +7,15 @@ export const chatMessage = async (ctx, userID, matchedUserID, randomTopic, rando
 <b>4. </b>${randomTopic.question_4}\n
 <b>5. </b>${randomTopic.question_5}\n
 <b>Phrasal Verbs</b>\n
-${randomPhrasalVerbs.map((phrasal, index) => 
-    `<b>${index + 1}. </b>${phrasal.verb} - ${phrasal.description}`
-).join('\n\n')}`;
+${randomPhrasalVerbs.map((phrasal, index) =>
+        `<b>${index + 1}. </b>${phrasal.verb} - ${phrasal.description}`
+    ).join('\n\n')}`;
+
 
     try {
-        await ctx.sendMessage(userID, topicMessage);
-        await ctx.sendMessage(matchedUserID, topicMessage);
+        await ctx.replyWithHTML(topicMessage, { chat_id: userID });
+        await ctx.replyWithHTML(topicMessage, { chat_id: matchedUserID });
     } catch (error) {
-        console.log(error);  
-    };
+        console.log("Error sending message:", error);
+    }
 };

@@ -9,15 +9,6 @@ const getAllUsers = async () => {
     return error ? null : data;
 };
 
-// Create Account From User ID
-const createUserAccount = async (userID, username, first_name, last_name) => {
-    const { data, error } = await supabase
-        .from('users')
-        .insert([{ userID, username, first_name, last_name }]);
-
-    return error ? null : data;
-};
-
 // Get User By User ID
 const getUserByUserID = async (userID) => {
     const { data, error } = await supabase
@@ -28,6 +19,25 @@ const getUserByUserID = async (userID) => {
 
     return error ? null : data;
 };
+
+// Create Account From User ID
+const createUserAccount = async (userID, username, first_name, last_name) => {
+    const { data, error } = await supabase
+        .from('users')
+        .insert([{ userID, username, first_name, last_name }]);
+
+    return error ? null : data;
+};
+
+// Update User Data
+const updateUserData = async (userID, username, first_name, last_name) => {
+    const { data, error } = await supabase
+        .from('users')
+        .update({ username, first_name, last_name })
+        .eq('userID', userID);
+
+    return error ? null : data;
+}
 
 // Change User Role
 const changeUserRole = async (userID, role) => {
@@ -69,4 +79,4 @@ const updateUserEnglishLevel = async (userID, englishLevel) => {
     return error ? null : data;
 };
 
-export default { getAllUsers, createUserAccount, getUserByUserID, changeUserRole, banUser, unbanUser, updateUserEnglishLevel };
+export default { getAllUsers, getUserByUserID, createUserAccount, updateUserData, changeUserRole, banUser, unbanUser, updateUserEnglishLevel };
