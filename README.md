@@ -72,6 +72,3 @@ This project is licensed under the ISC License.
 ---
 
 Happy learning with **OurSpeakingFriend**! 😊
-EOL
-
-echo "README.md has been created successfully."
