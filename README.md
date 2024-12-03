@@ -22,8 +22,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/nagiyev9/Your_Speaking_Friend_Telegram
    ```
 
 2. Install dependencies:
