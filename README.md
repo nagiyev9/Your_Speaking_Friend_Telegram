@@ -1,6 +1,6 @@
-# OurSpeakingFriend - Telegram Bot
+# YourSpeakingFriend - Telegram Bot
 
-**OurSpeakingFriend** is a Telegram bot that helps users find conversation partners and improve their English skills. Once users are matched, the bot provides a topic, 5 questions, and 5 phrasal verbs for practice, allowing users to enhance their language abilities.
+**YourSpeakingFriend** is a Telegram bot that helps users find conversation partners and improve their English skills. Once users are matched, the bot provides a topic, 5 questions, and 5 phrasal verbs for practice, allowing users to enhance their language abilities.
 
 ## Features
 
